@@ -18,14 +18,19 @@
         </div>
         <nav>
             <ul>
-                <li class="nav-sign"><a href="{% url 'signin' %}">Sign In</a></li>
-                <li class="nav-account"><a href="{% url 'create_account' %}">Create Account</a></li>
                 <li class="nav-films"><a href="films.html">Films</a></li>
                 <li class="nav-reviews"><a href="reviews.html">Reviews</a></li>
             </ul>
         </nav>
         <label>
             <input class="searchbar" type="text" placeholder="Search films...">
+        </label>
+        <label>
+{% if user_id %}
+    <p>Welcome, {{ user_name }}! <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <a href="{% url 'signin' %}">Sign In</a>
+{% endif %}
         </label>
     </header>
     

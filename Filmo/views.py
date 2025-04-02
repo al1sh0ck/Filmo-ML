@@ -7,12 +7,24 @@ from .models import Films
 from django.http import JsonResponse
 from django.contrib.auth.hashers import check_password, make_password
 from .models import Users  # Импортируем модель пользователей
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, login, authenticate
 
-def get_films(request):
-    films = Films.objects.all().values("name", "image", "length", "genre")
-    return JsonResponse(list(films), safe=False)
+
 def indexview(request):
-    return render(request, "index.html")
+    user_id = request.session.get("user_id")
+    user_email = request.session.get("user_email")  # или username, если есть
+    user_name = request.session.get("user_name")
+
+    if not user_id:
+        return redirect("signin")
+
+    return render(request, "index.html", {
+        "user_id": user_id,
+        "user_email": user_email,
+        "user_name": user_name
+
+    })
 
 def signin_view(request):
     if request.method == "POST":
@@ -20,16 +32,16 @@ def signin_view(request):
         password = request.POST.get("password")
 
         try:
-            user = Users.objects.get(email=email)  # Проверяем, есть ли пользователь в базе
-            if check_password(password, user.password):  # Проверяем хешированный пароль
-                request.session["user_id"] = user.id  # Сохраняем ID пользователя в сессии
-                return redirect("films")  # Перенаправляем на страницу фильмов
+            user = Users.objects.get(email=email)
+            if check_password(password, user.password):
+                request.session["user_id"] = user.id
+                request.session["user_email"] = user.email
+                request.session["user_name"] = user.name
+                return redirect("index")
             else:
-                error_message = "Invalid email or password."
+                return render(request, "signin.html", {"error": "Invalid credentials"})
         except Users.DoesNotExist:
-            error_message = "User not found."
-
-        return render(request, "signin.html", {"error": error_message})
+            return render(request, "signin.html", {"error": "User not found"})
 
     return render(request, "signin.html")
 
@@ -52,3 +64,6 @@ def register_view(request):
         return redirect("signin")  # Перенаправляем на страницу входа
 
     return render(request, "create_account.html")
+def logout_view(request):
+    logout(request)
+    return redirect('signin')
