@@ -1,0 +1,256 @@
+{% load static %}
+body {
+    background-color: #181818;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #202020;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.nav-sign:hover {
+    opacity: 0.8;
+}
+
+.nav-account:hover {
+    opacity: 0.8
+}
+
+.nav-films:hover {
+    opacity: 0.8
+}
+
+.nav-reviews:hover {
+    opacity: 0.8
+}
+
+nav ul {
+    font-family: "Lalezar", serif;
+    font-size: 19px;;
+    list-style: none;
+    display: flex;
+    gap: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+
+    display: inline;
+}
+
+nav ul li a {
+    font-family: "Noto Serif", serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+input[type="text"] {
+    font-family: "Noto Serif", serif;
+    font-size: 14px;
+    width: 200px;
+    padding: 7px;
+    border: none;
+    border-radius: 25px;
+}
+.hero {
+    position: relative; /* Ensures overlay positions correctly */
+    height: 70vh;
+    background: url("media/images/getout.png") no-repeat center center/cover; /* Adjusted image path */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), #181818);
+    z-index: 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    font-family: "Noto Serif", serif;
+    height: 60px;
+    width: 170px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: opacity 0.25s;
+}
+
+.hero button:hover {
+    opacity: 0.8;
+}
+
+.hero button:active {
+    opacity: 0.5;
+}
+
+.featured {
+    font-family: "Noto Serif", serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.film-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.film img {
+    width: 150px;
+    height: 225px;
+    border-radius: 10px;
+}
+
+.popular-week {
+    font-family: "Noto Serif", serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.popular-week h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.film-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.film img {
+    width: 150px;
+    height: 225px;
+    border-radius: 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #202020;
+}
+
+/* Sign-in Page Styles */
+.auth-form {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+}
+
+.auth-form h2 {
+    font-family: "Noto Serif", serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.auth-form input {
+    font-family: "Noto Serif", serif;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #27ae60;
+    background-color: #181818;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.auth-form input:focus {
+    border: 2px solid #2ecc71;
+}
+
+.auth-form button {
+    font-family: "Noto Serif", serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 323px;
+    height: 50px;
+    background-color: #27ae60;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.25s;
+}
+
+.auth-form button:hover {
+    opacity: 0.8;
+}
+
+.auth-form button:active {
+    opacity: 0.5;
+}
+
+.auth-form p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.auth-form a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}

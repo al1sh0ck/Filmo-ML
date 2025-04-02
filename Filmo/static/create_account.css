@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #181818;
+    color: #fff;
+    font-family: "Noto Serif", serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.register-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #202020;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register-container h1 {
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}

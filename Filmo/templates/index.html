@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmBoxd - Home</title>
+    <link rel="stylesheet" href="{% static "styles.css"%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Lalezar&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'index' %}">FilmBoxd</a>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-sign"><a href="{% url 'signin' %}">Sign In</a></li>
+                <li class="nav-account"><a href="{% url 'create_account' %}">Create Account</a></li>
+                <li class="nav-films"><a href="films.html">Films</a></li>
+                <li class="nav-reviews"><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+        <label>
+            <input class="searchbar" type="text" placeholder="Search films...">
+        </label>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <h1>Discover, Track & Share Your Favorite Films</h1>
+        <p>Join a community of film lovers and explore new movies every day.</p>
+        <button>Get Started</button>
+    </section>
+    
+    <section class="featured">
+        <h2>Popular Films</h2>
+        <div class="film-grid">
+            <div class="film"><img src="{% static "media/images/allquiet.png"%}" alt="Film 1"></div>
+            <div class="film"><img src="{% static "media/images/bulletrain.png"%}" alt="Film 2"></div>
+            <div class="film"><img src="{% static "media/images/stay.png"%}" alt="Film 3"></div>
+            <div class="film"><img src="{% static "media/images/trainingday.png"%}" alt="Film 4"></div>
+            <div class="film"><img src="{% static "media/images/coockoo.png"%}" alt="Film 5"></div>
+            <div class="film"><img src="{% static "media/images/matrix.png"%}" alt="Film 6"></div>
+        </div>
+    </section>
+
+    <section class="popular-week">
+        <h2>Popular This Week</h2>
+        <div class="film-grid">
+            <div class="film"><img src="{% static "media/images/oppenheimer.png"%}" alt="Film 7"></div>
+            <div class="film"><img src="{% static "media/images/spiderman.png"%}" alt="Film 8"></div>
+            <div class="film"><img src="{% static "media/images/joker.png"%}" alt="Film 9"></div>
+            <div class="film"><img src="{% static "media/images/interstellar.png"%}" alt="Film 10"></div>
+            <div class="film"><img src="{% static "media/images/avatar.png"%}" alt="Film 11"></div>
+            <div class="film"><img src="{% static "media/images/dune.png"%}" alt="Film 12"></div>
+        </div>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2025 FilmBoxd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
